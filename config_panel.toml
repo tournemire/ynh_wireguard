@@ -1,0 +1,41 @@
+version = "0.1"  # version number, not used yet but important
+name = "Wireguard configuration"
+
+[main]
+name = "main configuration"
+
+    [main.enabled]
+    ask.en = "enabled"
+    type = "boolean"
+    default = false
+
+    [main.interface]
+    name = "wireguard interface"
+
+        [main.interface.privkey]
+        ask.en = "interface private key"
+        type = "string"
+        help = "This endpoint's private key"
+
+        [main.interface.ipv4]
+        ask.en = "IPv4 address"
+        type = "string"
+	help = "This endpoint's IPv4 address in CIDR notation"
+
+        [main.interface.ipv6]
+        ask.en = "IPv6 address"
+        type = "string"
+	help = "This endpoint's IPv6 address in CIDR notation"
+
+    [main.peer]
+    name = "wireguard peer"
+
+    	[main.peer.pubkey]
+	ask.en = "peer's pubkey"
+	type = "string"
+	help = "Peer's public key"
+
+	[main.peer.endpoint]
+	ask.en = "peer's location"
+	type = "string"
+	help = "Can be specified as domain:port or IPv4:port, or [IPv6]:port."
